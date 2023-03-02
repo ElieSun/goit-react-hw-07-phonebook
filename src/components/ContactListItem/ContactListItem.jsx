@@ -8,18 +8,17 @@ export default function ContactListItem({ contact }) {
     const dispatch = useDispatch();
     const handleDeleteContact = () => dispatch(deleteContact(contact.id));
     return (
-        <>
+      <>
         <Item>
-            <span>
-            {contact.name}: {contact.number}{' '}
-            </span>
-            <Button type="button" onClick={handleDeleteContact}>
-            Delete
-            </Button>
+          {contact.name}: {contact.number}{' '}
+        
+        <Button type="button" onClick={handleDeleteContact}>
+          Delete
+        </Button>
         </Item>
-        </>
-        );
-    }
+      </>
+    );
+  }
 
 // export default function ContactListItem ({ contact }) {
 //     const dispatch = useDispatch();

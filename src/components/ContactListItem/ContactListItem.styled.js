@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-export const Item = styled.li`
+export const Item = styled.span`
     display: flex;
     justify-content: space-between; 
     align-items: center; 
     flex-direction: row; 
     flex-wrap: nowrap; 
     align-content: center;
-    width: 300px;
+    width: 250px;
     margin: 10px 0px;
     min-height: 30px;
 `;
