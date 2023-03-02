@@ -4,18 +4,35 @@ import { Item, Button } from 'components/ContactListItem/ContactListItem.styled'
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 
-export default function ContactListItem ({ contact }) {
+export default function ContactListItem({ contact }) {
     const dispatch = useDispatch();
     const handleDeleteContact = () => dispatch(deleteContact(contact.id));
-        return (
-            <>
-                <Item>
-                    <span>{contact.name}: {contact.number} </span>
-                    <Button  type="button" onClick={handleDeleteContact}>Delete</Button>
-                </Item>
-            </>
+    return (
+        <>
+        <Item>
+            <span>
+            {contact.name}: {contact.number}{' '}
+            </span>
+            <Button type="button" onClick={handleDeleteContact}>
+            Delete
+            </Button>
+        </Item>
+        </>
         );
     }
+
+// export default function ContactListItem ({ contact }) {
+//     const dispatch = useDispatch();
+//     const handleDeleteContact = () => dispatch(deleteContact(contact.id));
+//         return (
+//             <>
+//                 <Item>
+//                     <span>{contact.name}: {contact.number} </span>
+//                     <Button  type="button" onClick={handleDeleteContact}>Delete</Button>
+//                 </Item>
+//             </>
+//         );
+//     }
 
 
 ContactListItem.propTypes = {
