@@ -7,7 +7,7 @@ export const Item = styled.span`
     flex-direction: row; 
     flex-wrap: nowrap; 
     align-content: center;
-    width: 250px;
+    width: 200px;
     margin: 10px 0px;
     min-height: 30px;
 `;
