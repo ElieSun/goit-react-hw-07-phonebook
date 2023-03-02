@@ -13,3 +13,8 @@ export const List = styled.ul`
     color: #ffffff;
     margin-bottom: 250px;
 ;`
+
+export const Item = styled.li`
+  display: block;
+  padding-right: 40px;
+`;

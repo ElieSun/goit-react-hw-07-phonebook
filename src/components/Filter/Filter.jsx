@@ -1,17 +1,17 @@
 import { Input } from 'components/Filter/Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filterSlice';
-import { getFilter } from 'redux/selectors';
 
 
-export default function Filter() {
-    const filter = useSelector(getFilter);
+const Filter = () => {
+    const filter = useSelector(state => state.filter);
     const dispatch = useDispatch();
+
     const handleChange = evt => {
         dispatch(setFilter(evt.target.value));
     };
 
-    return(
+    return (
         <>
         <Input
             type="text"
@@ -23,3 +23,5 @@ export default function Filter() {
         </>
     )
 }
+
+export default Filter;
