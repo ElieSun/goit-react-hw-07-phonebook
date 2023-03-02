@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import shortid from 'shortid';
 import { Form, FormLine, FormLabel, FormInput, FormButton } from 'components/ContactForm/ContactForm.styled'
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
@@ -12,8 +11,6 @@ export default function ContactForm () {
     const contacts = useSelector(getContacts);
     const dispatch = useDispatch();
 
-    let nameInputId = shortid.generate();
-    let numberInputId = shortid.generate();
 
     const handleChange = evt => {
         const {name, value} = evt.currentTarget;
@@ -36,7 +33,6 @@ export default function ContactForm () {
             return
         }
         const contact = {
-            id: shortid.generate(),
             name: name,
             number: number
         }
@@ -53,7 +49,7 @@ export default function ContactForm () {
             <>
             <Form onSubmit={handleSubmit}>
                 <FormLine>
-                    <FormLabel htmlFor={nameInputId}>Name</FormLabel>
+                    <FormLabel>Name</FormLabel>
                     <FormInput
                         type="text"
                         name="name"
@@ -62,11 +58,10 @@ export default function ContactForm () {
                         required
                         value={name}
                         onChange={handleChange}
-                        id={nameInputId}
                     />
                 </FormLine>
                 <FormLine>
-                    <FormLabel htmlFor={numberInputId}>Contact Number</FormLabel>
+                    <FormLabel>Contact Number</FormLabel>
                     <FormInput
                         type="tel"
                         name="number"
@@ -75,7 +70,6 @@ export default function ContactForm () {
                         required
                         value={number}
                         onChange={handleChange}
-                        id={numberInputId}
                     />
                 </FormLine>
                 <FormButton type="submit">
